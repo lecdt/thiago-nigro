@@ -1,0 +1,215 @@
+/* index <header> */
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding: 100px 0 0 100px;
+}
+
+header .titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 50%;
+  max-width: 800px;
+  margin: 100px 0 0 0;
+  z-index: 2;
+}
+
+header .titulo h1 {
+  font-family: var(--bold);
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  color: var(--cor-branco);
+  position: relative;
+  z-index: 3;
+}
+
+header .titulo img.borrao {
+  width: 80%;
+  max-width: 600px;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  z-index: 2;
+}
+
+header .titulo p {
+  font-family: var(--regular);
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: var(--cor-branco);
+  line-height: 1.5;
+  margin: 20px 0 25px 0;
+  width: 100%;
+  max-width: 500px;
+  z-index: 3;
+}
+
+header .titulo button {
+  display: flex;
+  position: relative;
+  padding: 0 20px;
+  background-color: transparent;
+}
+
+header .titulo button h3 {
+  padding: 15px 25px;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: var(--cor-branco);
+  font-family: var(--bold);
+  background-color: var(--cor-laranja);
+  box-shadow: 0 5px 20px 0 var(--cor-laranja);
+  border-radius: 10px;
+  z-index: 2;
+  transition: all 0.3s;
+}
+
+header .titulo button:hover h3 {
+  color: var(--cor-laranja);
+  background-color: transparent;
+  box-shadow: 0 5px 20px 0 transparent;
+}
+
+header .titulo button span {
+  background-color: var(--cor-laranja);
+  box-shadow: 0 5px 20px 0 var(--cor-laranja);
+  width: 10px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  border-radius: 10px;
+}
+
+header .titulo button:hover span {
+  background-color: var(--cor-branco);
+}
+
+header .titulo button:hover span.um {
+  width: 100%;
+}
+
+header .titulo button:hover span.dois {
+  width: 100%;
+}
+
+header .titulo button span.um {
+  right: 0;
+  transition: all 1s;
+}
+
+header .titulo button span.dois {
+  left: 0;
+  transition: all 1s;
+}
+
+/* Imagem */
+
+header .imagem {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 100vh;
+  z-index: 2;
+}
+
+header .imagem img {
+  width: 100%;
+}
+
+/* Imagem */
+
+header .background {
+  width: 200%;
+  height: 100vh;
+  position: absolute;
+  background: linear-gradient(45deg, #090707, #24211F);
+  background: -webkit-linear-gradient(45deg, #090707, #24211F);
+  bottom: -25vh;
+  left: 0;
+  z-index: 1;
+  transform: rotate(-15deg);
+  animation: backgroundHeader 30s linear infinite;
+}
+
+@keyframes backgroundHeader {
+  0% {
+    transform: rotate(-15deg) scale(1);
+  }
+  50% {
+    transform: rotate(-35deg) scale(1.4);
+  }
+  100% {
+    transform: rotate(-15deg) scale(1);
+  }
+}
+
+/* Responsivo */
+
+@media screen and (max-width: 1000px) {
+  header {
+    flex-direction: column;
+    min-height: auto;
+    padding: 100px 20px 0 20px;
+    min-height: 100vh;
+  }
+  
+  header .titulo {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 0 50px 0;
+  }
+  
+  header .titulo h1 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  
+  header .titulo img.borrao {
+    top: 20px;
+    left: 20px;
+  }
+  
+  header .titulo p {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    margin: 15px 0 20px 0;
+  }
+  
+  header .titulo button {
+    display: flex;
+    position: relative;
+    padding: 0 20px;
+    background-color: transparent;
+  }
+  
+  header .titulo button h3 {
+    padding: 15px 20px;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+  }
+  
+  /* Imagem */
+  
+  header .imagem {
+    min-height: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+  }
+  
+  header .imagem img {
+    width: 180%;
+    max-width: 900px;
+  }
+  
+  /* Imagem */
+  
+  header .background {
+    height: 60vh;
+    bottom: auto;
+    top: 50vh;
+  }
+}

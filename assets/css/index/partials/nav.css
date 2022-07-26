@@ -1,0 +1,99 @@
+/* index <nav> */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 3px solid var(--cor-escuro-2);
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px 100px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+nav img.logo {
+  width: 100%;
+  max-width: 150px;
+}
+
+nav .opcoes {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+nav .opcoes a {
+  font-family: var(--regular);
+  font-size: clamp(0.8rem, 3vw, 1rem);
+  color: var(--cor-branco);
+  margin: 0 0 0 30px;
+  transition: all 0.3s;
+}
+
+nav .opcoes a:hover {
+  color: var(--cor-laranja);
+}
+
+nav .opcoes a:hover span {
+  color: var(--cor-branco);
+}
+
+nav .opcoes a span {
+  color: var(--cor-laranja);
+  transition: all 0.3s;
+}
+
+nav .opcoes a.destaque {
+  font-family: var(--bold);
+  font-size: clamp(0.8rem, 3vw, 1rem);
+  color: var(--cor-branco);
+  background-color: var(--cor-laranja);
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0 var(--cor-laranja);
+  margin: 0;
+  margin-left: auto;
+  transition: all 0.3s;
+}
+
+nav .opcoes a.destaque:hover {
+  background-color: var(--cor-branco);
+  color: var(--cor-laranja);
+  box-shadow: 0 5px 20px 0 var(--cor-branco);
+}
+
+/* Responsivo */
+
+@media screen and (max-width: 1000px) {
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 3px solid var(--cor-escuro-2);
+    position: fixed;
+    padding: 15px 20px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  nav img.logo {
+    width: 100%;
+    max-width: 120px;
+  }
+
+  nav .opcoes a {
+    display: none;
+  }
+
+  nav .opcoes a.destaque {
+    display: flex;
+    padding: 10px 15px;
+    font-size: clamp(0.7rem, 3vw, 0.9rem);
+  }
+}
